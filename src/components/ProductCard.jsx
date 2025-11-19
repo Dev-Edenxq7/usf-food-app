@@ -1,11 +1,13 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { FiHeart, FiShoppingCart } from 'react-icons/fi'
 import Button from './Button'
+import CartContext from '../context/CartContext'
 
 // Reusable product card used in Cardápio. Contains image, name, price and add-to-cart button.
 export default function ProductCard({product}){
   const [fav, setFav] = useState(false)
   const [added, setAdded] = useState(false)
+  const { addItem } = useContext(CartContext)
 
   return (
     <div className="bg-white rounded-lg p-3 shadow-sm flex flex-col">
@@ -26,7 +28,7 @@ export default function ProductCard({product}){
           <FiHeart />
         </button>
 
-        <Button onClick={() => setAdded(true)} variant="primary">
+        <Button onClick={() => { addItem(product); setAdded(true) }} variant="primary">
           <span className="flex items-center gap-2"><FiShoppingCart /> {added ? 'Adicionado' : 'Adicionar ao carrinho'}</span>
         </Button>
       </div>

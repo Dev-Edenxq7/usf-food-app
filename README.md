@@ -33,7 +33,16 @@ Notas
 - Ícones usam `react-icons` (estilo contorno). Ícones preenchidos aparecem quando o estado está ativo (ex.: favorito).
 - Para produção, adicione backend/integração de API, autenticação OAuth real e imagens locais em `src/assets`.
 
+Novas funcionalidades adicionadas
+- Contexto do carrinho: `src/context/CartContext.jsx` (persiste em `localStorage`).
+- Página do carrinho: `src/pages/Cart.jsx` (rota `/cart`).
+- Integração: `Navbar` mostra a contagem do carrinho; `ProductCard` usa o contexto para adicionar itens.
+
+CI / Deploy
+- O repositório contém um workflow GitHub Actions em `.github/workflows/ci.yml` que faz build e publica a pasta `dist` no GitHub Pages quando há push na branch `main`.
+- Para habilitar GitHub Pages: em `Settings` → `Pages` escolha a branch `gh-pages` (a workflow cria o conteúdo). O `GITHUB_TOKEN` padrão é usado para deploy.
+
 Deseja que eu também:
-- Inicialize um repositório Git e faça o primeiro commit?
-- Configure GitHub Actions para deploy?
+- Configure deploy para Vercel/Netlify?
+- Adicione animações e melhorias de responsividade?
 
