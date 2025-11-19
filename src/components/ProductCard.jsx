@@ -10,17 +10,18 @@ export default function ProductCard({product}){
   const { addItem } = useContext(CartContext)
 
   return (
-    <div className="bg-white rounded-lg p-3 shadow-sm flex flex-col">
-      <div className="h-40 rounded-lg overflow-hidden mb-3">
+    <div className="bg-[var(--usf-white)] rounded-card p-0 shadow-card-soft flex flex-col overflow-hidden">
+      <div className="h-44 w-full overflow-hidden rounded-top-card mb-0">
         <img src={product.img} alt={product.name} className="w-full h-full object-cover"/>
       </div>
+      <div className="p-4 flex-1">
 
       <div className="flex-1">
         <h3 className="font-semibold text-[var(--usf-brown)]">{product.name}</h3>
         <p className="text-[var(--usf-graytext)]">{product.price}</p>
       </div>
 
-      <div className="mt-3 flex items-center justify-between">
+      <div className="mt-4 flex items-center justify-between">
         <button
           aria-pressed={fav}
           onClick={() => setFav(v => !v)}
@@ -29,7 +30,7 @@ export default function ProductCard({product}){
         </button>
 
         <Button onClick={() => { addItem(product); setAdded(true) }} variant="primary">
-          <span className="flex items-center gap-2"><FiShoppingCart /> {added ? 'Adicionado' : 'Adicionar ao carrinho'}</span>
+          <span className="flex items-center gap-2"><FiShoppingCart /> {added ? 'Adicionado' : 'Adicionar'}</span>
         </Button>
       </div>
     </div>

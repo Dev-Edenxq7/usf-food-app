@@ -31,12 +31,18 @@ Estrutura principal
 Notas
 - Código comentado e componentes construídos para reuso.
 - Ícones usam `react-icons` (estilo contorno). Ícones preenchidos aparecem quando o estado está ativo (ex.: favorito).
-- Para produção, adicione backend/integração de API, autenticação OAuth real e imagens locais em `src/assets`.
 
 Novas funcionalidades adicionadas
 - Contexto do carrinho: `src/context/CartContext.jsx` (persiste em `localStorage`).
 - Página do carrinho: `src/pages/Cart.jsx` (rota `/cart`).
 - Integração: `Navbar` mostra a contagem do carrinho; `ProductCard` usa o contexto para adicionar itens.
+
+Design visual atualizado
+- Fundo principal: `#F5F5DC` (soft cream)
+- Cards flutuantes brancos com cantos arredondados de `20px` e sombra suave (`.rounded-card`, `.shadow-card-soft`).
+- Tipografia: `Inter` importada via Google Fonts.
+- Botões primários: verde vibrante com gradiente suave (`from: #9FE0A4` → `to: #7FB77E`).
+- Pequenas micro-interações: cards sobem levemente ao passar o mouse.
 
 CI / Deploy
 - O repositório contém um workflow GitHub Actions em `.github/workflows/ci.yml` que faz build e publica a pasta `dist` no GitHub Pages quando há push na branch `main`.
