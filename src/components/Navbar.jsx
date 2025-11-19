@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FiSearch, FiShoppingCart, FiUser, FiMap, FiMenu } from 'react-icons/fi'
+import { MagnifyingGlassIcon, ShoppingCartIcon, UserIcon, Bars3Icon } from '@heroicons/react/24/outline'
 import { useContext } from 'react'
 import CartContext from '../context/CartContext'
 
@@ -18,15 +18,15 @@ export default function Navbar(){
           <span className="text-lg font-semibold text-[var(--usf-brown)]">USF Food</span>
         </Link>
 
-        <nav className="flex items-center gap-4 text-[var(--usf-brown)]">
-          <Link to="/" aria-label="buscar" title="Buscar" className="p-2 rounded-full hover:bg-[var(--usf-cream)]"><FiSearch/></Link>
+        <nav className="flex items-center gap-3 text-[var(--usf-brown)]">
+          <Link to="/" aria-label="buscar" title="Buscar" className="p-2 rounded-full hover:bg-[var(--usf-cream)]"><MagnifyingGlassIcon className="w-5 h-5"/></Link>
           <Link to="/delivery" aria-label="delivery" title="Delivery" className="p-2 rounded-full hover:bg-[var(--usf-cream)] relative">
-            <FiShoppingCart />
+            <ShoppingCartIcon className="w-5 h-5"/>
             {count > 0 && <span className="absolute -top-2 -right-2 bg-[var(--usf-orange)] text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">{count}</span>}
           </Link>
-          <Link to="/cart" aria-label="carrinho" title="Carrinho" className="p-2 rounded-full hover:bg-[var(--usf-cream)]">Carrinho</Link>
-          <Link to="/auth" aria-label="usuario" title="Conta" className="p-2 rounded-full hover:bg-[var(--usf-cream)]"><FiUser/></Link>
-          <Link to="/menu" aria-label="menu" title="Menu" className="p-2 rounded-full hover:bg-[var(--usf-cream)]"><FiMenu/></Link>
+          <Link to="/cart" aria-label="carrinho" title="Carrinho" className="px-3 py-2 rounded-full hover:bg-[var(--usf-cream)] text-sm font-medium">Carrinho</Link>
+          <Link to="/auth" aria-label="usuario" title="Conta" className="p-2 rounded-full hover:bg-[var(--usf-cream)]"><UserIcon className="w-5 h-5"/></Link>
+          <Link to="/menu" aria-label="menu" title="Menu" className="p-2 rounded-full hover:bg-[var(--usf-cream)]"><Bars3Icon className="w-5 h-5"/></Link>
         </nav>
       </div>
     </header>

@@ -3,7 +3,7 @@ import ProductCard from '../components/ProductCard'
 
 // Sample products for Cardápio page. In a real app this comes from an API.
 const sampleProducts = [
-  {id:1, name:'Café com Leite', price:'R$ 6,50', img:'https://source.unsplash.com/400x300/?coffee'},
+  {id:1, name:'Café com Leite', price:'R$ 6,50', img:'https://source.unsplash.com/400x300/?coffee', promo:true},
   {id:2, name:'Pão de Queijo', price:'R$ 4,00', img:'https://source.unsplash.com/400x300?bread'},
   {id:3, name:'Bolo de Cenoura', price:'R$ 8,50', img:'https://source.unsplash.com/400x300?cake'},
   {id:4, name:'Sanduíche Natural', price:'R$ 12,00', img:'https://source.unsplash.com/400x300?sandwich'}
