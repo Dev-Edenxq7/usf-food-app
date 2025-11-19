@@ -10,8 +10,8 @@ export default function ProductCard({product}){
   const { addItem } = useContext(CartContext)
 
   return (
-    <div className="bg-[var(--usf-white)] rounded-card p-0 shadow-card-soft flex flex-col overflow-hidden">
-      <div className="h-44 w-full overflow-hidden rounded-top-card mb-0">
+    <div className="bg-[var(--usf-white)] rounded-card p-0 shadow-card-soft flex flex-col overflow-hidden animate-fade-in">
+      <div className="h-40 sm:h-44 lg:h-52 w-full overflow-hidden rounded-top-card mb-0">
         <img src={product.img} alt={product.name} className="w-full h-full object-cover"/>
       </div>
       <div className="p-4 flex-1">
