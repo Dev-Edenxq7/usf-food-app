@@ -1,10 +1,10 @@
-import React, {useState, useContext} from 'react'
-import { HeartIcon, ShoppingCartIcon } from '@heroicons/react/24/outline'
+import React, { useState, useContext } from 'react'
+import { HeartIcon, ShoppingCartIcon, TagIcon } from '@heroicons/react/24/outline'
 import Button from './Button'
 import CartContext from '../context/CartContext'
 
 // Reusable product card used in Cardápio. Contains image, name, price and add-to-cart button.
-export default function ProductCard({product}){
+export default function ProductCard({ product }) {
   const [fav, setFav] = useState(false)
   const [added, setAdded] = useState(false)
   const { addItem } = useContext(CartContext)
@@ -12,15 +12,14 @@ export default function ProductCard({product}){
   return (
     <div className="bg-[var(--usf-white)] rounded-card p-0 shadow-card-soft flex flex-col overflow-hidden animate-fade-in relative">
       <div className="h-40 sm:h-44 lg:h-52 w-full overflow-hidden rounded-top-card mb-0 relative">
-        <img src={product.img} alt={product.name} className="w-full h-full object-cover"/>
+        <img src={product.img} alt={product.name} loading="lazy" className="w-full h-full object-cover" />
         {product.promo && (
           <span className="absolute top-3 left-3 bg-[var(--usf-orange)] text-white text-xs font-semibold px-2 py-1 rounded-lg shadow-sm">Promo</span>
         )}
       </div>
       <div className="p-4 flex-1 flex flex-col">
         <h3 className="font-semibold text-[var(--usf-brown)] line-clamp-2">{product.name}</h3>
-        <p className="text-[var(--usf-graytext)] mt-1">{product.price}</p>
-
+        <p className="text-[var(--usf-graytext)] mt-1 flex items-center gap-1"><TagIcon className="w-4 h-4" /> {product.price}</p>
         <div className="mt-4 flex items-center justify-between">
           <button
             aria-pressed={fav}
